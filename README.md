@@ -61,13 +61,16 @@ Falls back to `file.getLastUpdated()` timestamp if date can't be parsed from fil
 
 ## Manager dashboard
 
-A Netlify-hosted boss dashboard (reads published Google Sheet CSV — no CORS, no auth):
+The dashboard evolved from a read-only published-CSV view into a full Apps Script web app (`doGet`/`doPost` router serving both the salesperson tagging UI and the manager view from the same script):
 
 - **Weekly leaderboard** — top performers by call quality score, resets Monday
 - **Today's need-feedback calls** — one-click list of calls flagged for coaching
 - **In-card audio player** — listen to any call without leaving the dashboard
 - **AI score badge** — colour-coded 0–10 on every call card
-- **Remark field** — managers add notes directly from the dashboard (writes back to sheet via Apps Script webhook)
+- **Remark field** — managers add notes directly from the dashboard, written back to the sheet via the same webhook that tags calls
+- **Salesperson self-tagging** — a lightweight phone web app (`doGet` page) lets each salesperson tag their own untagged calls by type, closing the loop on calls the automatic parser couldn't classify from the filename alone
+
+The original separate **Bookings** and **Booking Dashboard** sheets were retired once the CRM layer's Leads tab (below) fully replaced what they were tracking — one less place for the same data to drift out of sync.
 
 ---
 
