@@ -94,6 +94,12 @@ Booking-type calls (Birthday / Group / Corporate) auto-populate a **Leads** tab:
 
 ---
 
+## Related
+
+Recordings only exist for calls that were **answered**, so this system can't see missed or unreturned calls by design. That gap is covered by a sister system, the [Sales Call Monitor](https://github.com/Souvikkundu369/sales-call-monitor), which reads each phone's full call log and measures missed calls that were never called back.
+
+---
+
 ## Tech stack
 
 `Google Apps Script` · `Google Drive API` · `Google Sheets` · `Gemini LLM` · `FolderSync` · `JavaScript` · `Netlify` · `HTML/CSS`
